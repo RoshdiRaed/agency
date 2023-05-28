@@ -95,30 +95,30 @@
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <div class="row">
-                @foreach ($img as $img)
+                @foreach ($img as $i)
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 1-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1{{ $img->id }}">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1{{ $i->id }}">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
                                 <div
                                     style="display:flex; align-items: center; justify-content: center; height: 150px; object-fit: cover;">
                                     <img style="height: 100%; "
-                                        src="{{ asset('storage/assets/img/portfolio/' . $img->s) }}"
+                                        src="{{ asset('storage/assets/img/portfolio/' . $i->s) }}"
                                         alt="..." /><br>
                                 </div>
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">{{ $img->client }}</div>
-                                <div class="portfolio-caption-subheading text-muted">{{ $img->category }}</div>
+                                <div class="portfolio-caption-heading">{{ $i->client }}</div>
+                                <div class="portfolio-caption-subheading text-muted">{{ $i->category }}</div>
                             </div>
                         </div>
                     </div>
                 @endforeach
                 <div style="width:100%; position: relative;" class="btn btn-primary btn-xl text-uppercase">
-                    <form action="{{ route('image.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('name.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <label style="text-align: center" for="">Enter Name:</label>
                         <input type="text" name="name" id="" placeholder="Name"><br><br>
@@ -399,8 +399,8 @@
     </footer>
     <!-- Portfolio Modals-->
     <!-- Portfolio item 1 modal popup-->
-    @foreach ($img as $img)
-        <div class="portfolio-modal modal fade" id="portfolioModal1{{ $img->id }}" tabindex="-1"
+    @foreach ($img as $i)
+        <div class="portfolio-modal modal fade" id="portfolioModal1{{ $i->id }}" tabindex="-1"
             role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -412,19 +412,19 @@
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">@yield('myname')</h2>
-                                    <p class="item-intro text-muted">All Details For Item Number {{ $img->id }}
+                                    <p class="item-intro text-muted">All Details For Item Number {{ $i->id }}
                                     </p>
                                     <img class="img-fluid d-block mx-auto"
-                                        src="{{ asset('storage/assets/img/portfolio/' . $img->s) }}" alt="..." />
-                                    <p>{{ $img->description }}</p>
+                                        src="{{ asset('storage/assets/img/portfolio/' . $i->s) }}" alt="..." />
+                                    <p>{{ $i->description }}</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
-                                            {{ $img->client }}
+                                            {{ $i->client }}
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            {{ $img->category }}
+                                            {{ $i->category }}
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"

@@ -20,4 +20,8 @@ Route::get('/', function () {
 });
 
 Route::resource('message', MessageController::class);
-Route::resource('image', PhotoController::class);
+Route::resource('name', PhotoController::class);
+
+Route::post('/successful', function () {
+    return view('successful');
+})->name('successful');
