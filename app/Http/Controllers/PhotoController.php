@@ -38,7 +38,7 @@ class PhotoController extends Controller
         $massage->description = $request->description;
         $image = $request->file('file');
         $imageName = rand() . $request->file('file')->getClientOriginalName();
-        $image->move('storage/assets/img/portfolio', $imageName);
+        $image->move('uploads', $imageName);
         $massage->massage = $imageName;
         // $massage->save();
         $massage->save();

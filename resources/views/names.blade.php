@@ -414,8 +414,8 @@
                                     <h2 class="text-uppercase">@yield('myname')</h2>
                                     <p class="item-intro text-muted">All Details For Item Number {{ $i->id }}
                                     </p>
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="{{ asset('storage/assets/img/portfolio/' . $i->s) }}" alt="..." />
+                                    <img class="img-fluid d-block mx-auto" src="{{ asset('uploads/' .  $i->massage )}}"
+                                        alt="..." />
                                     <p>{{ $i->description }}</p>
                                     <ul class="list-inline">
                                         <li>

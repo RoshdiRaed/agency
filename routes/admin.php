@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotoController;
-use App\Http\Controllers\MessageController;
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,14 +13,9 @@ use App\Http\Controllers\MessageController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::resource('message', MessageController::class);
+// Route::get('/successful', function () {
+//     return view('successful');
+// })->name('successful');
 
-Route::resource('name', PhotoController::class);
-
-Route::post('/successful', function () {
-    return view('successful');
-})->name('successful');
+// Route::resource('name', PhotoController::class);
