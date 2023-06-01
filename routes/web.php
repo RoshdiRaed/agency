@@ -23,6 +23,6 @@ Route::resource('message', MessageController::class);
 
 Route::resource('name', PhotoController::class);
 
-Route::post('/successful', function () {
-    return view('successful');
-})->name('successful');
+// Route::post('/successful', function () {
+//     return view('successful');
+// })->name('successful');
